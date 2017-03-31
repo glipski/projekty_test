@@ -1,0 +1,18 @@
+<h1>Lista projektów</h1>
+
+<table class="table">
+<tr><th>Lp.</th><th>Nazwa</th><th>Data</th><th>Operacje</th></tr>
+{% for p in object_list %}
+<tr>
+  <td>{{ forloop.counter }}</td>
+  <td>{{ p.nazwa_projektu }}</td>
+  <td>{{ p.szkola.username }}</td>
+  <td>
+    {% if p.autor.username == user.username %}
+      <a href="{% url 'projekty:edytuj' p.id %}">Edytuj</a> &bull;
+      <a href="{% url 'projekty:usun' p.id %}">Usuń</a>
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}
+</table>

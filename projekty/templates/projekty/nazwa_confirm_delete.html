@@ -1,0 +1,6 @@
+<h1>Usuwanie projektu</h1>
+<form action="." method="post">
+  {% csrf_token %}
+  <p>Czy na pewno chcesz usunąć projekt?:<br />"{{ object }}"?</p>
+  <button type="submit">Usuń</button>
+</form>

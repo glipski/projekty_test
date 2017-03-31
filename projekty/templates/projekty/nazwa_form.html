@@ -1,0 +1,21 @@
+<h1>Dodaj projekt</h1>
+
+<form action="." method="post" id="pform">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <h3>Dane:</h3>
+  {{ dane.management_form }}
+  {{ dane.non_form_errors }}
+  {% for d in dane %}
+  {{ d.id }}
+    <div class="{{ dane.prefix }}">
+      <span>{{ forloop.counter }})&nbsp;</span>
+      {{ d.dane.errors }}
+      {{ d.opis_projektu.errors }}
+      {{ d.nazwa.label_tag }} {{ d.nazwa }}
+      {{ d.opis_projektu.label_tag }} {{ d.opis_projektu }}
+    </div>
+  {% endfor %}
+  <br /><input type="submit" value="Zapisz">
+</form>
