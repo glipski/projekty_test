@@ -9,9 +9,14 @@ class NazwaForm(ModelForm):
     class Meta:
         model = models.Nazwa
         exclude = ('data_publikacji', '#')
-        widgets = {'opis_projektu': Textarea(attrs={'rows':2, 'cols': 50}),
-				   'szkola': Textarea(attrs={'rows':2, 'cols':50}),
-				   'nazwa_projektu': Textarea(attrs={'rows':2, 'cols':50}),
+        widgets = {'nazwa_projektu': Textarea(attrs={'rows':1, 'cols': 75}),
+                   'krotki_opis': Textarea(attrs={'rows':1, 'cols': 75}),
+                   'dlugi_opis': Textarea(attrs={'rows':1, 'cols': 75}),
+                   'problemy': Textarea(attrs={'rows':1, 'cols': 75}),
+                   'bledy': Textarea(attrs={'rows':1, 'cols': 75}),
+                   'szkola': Textarea(attrs={'rows':1, 'cols':50}),
+                   'liczba_uczniow': Textarea(attrs={'rows':1, 'cols': 75}),
+				   'informacje': Textarea(attrs={'rows':2, 'cols':50}),
 				   
 				   
 				  

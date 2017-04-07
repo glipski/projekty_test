@@ -14,10 +14,13 @@ class Nazwa(models.Model):
     nazwa_projektu = models.CharField(max_length=50)
     #data_publikacji = models.DateTimeField('data publikacji', null=False)
     autor = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
-    opis_projektu = models.CharField(max_length=200)
+    krotki_opis = models.CharField(max_length=200)
+    dlugi_opis = models.CharField(max_length=500)
+    problemy = models.CharField(max_length=500)
+    bledy = models.CharField(max_length=500)
     szkola = models.CharField(max_length=200)
     liczba_uczniow = models.IntegerField(default=0)
-
+    informacje = models.CharField(max_length=200)
     
     def __str__(self):
         return self.nazwa_projektu

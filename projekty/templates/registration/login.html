@@ -1,4 +1,12 @@
-<h1>Logowanie</h1>
+{% extends "projekty/base.html" %}
+
+{% block tytul_h1 %}
+
+Logowanie
+
+{% endblock %}
+
+{% block tresc %}
   <form method="post" action=".">
     {% csrf_token %}
     {{ form.as_p }}
@@ -9,3 +17,4 @@
   Nie masz konta?<br>
   <a href="{% url 'registration_register' %}">Utwórz konto!</a>
 </p>
+{% endblock %}

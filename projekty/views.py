@@ -7,12 +7,13 @@ from django.utils.decorators import method_decorator
 from . import models
 from . import forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import DetailView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.template.response import TemplateResponse
 
 def index(request):
-    kontekst = {'komunikat': "Witamy w aplikacji Projekty KzK!"}
+    kontekst = {'komunikat': "Witamy w aplikacji Projekty KzK! Tu możesz założyć konto, zalogować się i zgłosić swój projekt. Zapraszamy!"}
     return TemplateResponse(request, 'projekty/index.html', kontekst)
     
 @method_decorator(login_required, 'dispatch')
@@ -35,7 +36,21 @@ class NazwaUpdate(UpdateView):
 @method_decorator(login_required, 'dispatch')
 class NazwaDelete(DeleteView):
     model = models.Nazwa
-    success_url = reverse_lazy('projekty:lista') 
+    success_url = reverse_lazy('projekty:lista')
+    
+    
+#DetailView na później ++++
+    
+"""
+@method_decorator(login_required, 'dispatch')
+class NazwaDetailView(DetailView):
+    model = models.Nazwa
+    
+"""
+
+
+
+
 
 """
     def get_context_data(self, **kwargs):

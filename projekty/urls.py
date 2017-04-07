@@ -6,6 +6,8 @@ from .models import Nazwa
 from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
 
+from django.views.generic import DeleteView, DetailView
+
 app_name = 'projekty'
 
 urlpatterns = [url(r'^$', views.index, name='index'),
@@ -13,7 +15,8 @@ urlpatterns = [url(r'^$', views.index, name='index'),
                name='lista'),
                url(r'^dodaj/$', views.NazwaCreate.as_view(), name='dodaj'),
                url(r'^edytuj/(?P<pk>\d+)/', views.NazwaUpdate.as_view(), name='edytuj'),
-			   url(r'^usun/(?P<pk>\d+)/', views.NazwaDelete.as_view(), name='usun'),
+               url(r'^usun/(?P<pk>\d+)/', views.NazwaDelete.as_view(), name='usun'),
+               #url(r'^info/(?P<pk>\d+)/', views.NazwaDetail.as_view(), name='info'),
 ]
 
 
