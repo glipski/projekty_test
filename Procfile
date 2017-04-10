@@ -1,1 +1,1 @@
-web: gunicorn projekty-kzk.wsgi --log-file -
+web: gunicorn projekty.wsgi --log-file -
