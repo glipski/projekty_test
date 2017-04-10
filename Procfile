@@ -1,1 +1,1 @@
-web: gunicorn kzk.wsgi
+web: gunicorn kzk.wsgi --log-file -
