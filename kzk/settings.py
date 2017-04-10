@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import dj_database_url
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
 boolean = lambda value: bool(int(value))
 local_path = lambda path: os.path.join(os.path.dirname(__file__), path)
 
@@ -91,6 +88,9 @@ WSGI_APPLICATION = 'kzk.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///db.sqlite')
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
