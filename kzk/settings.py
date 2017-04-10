@@ -23,9 +23,7 @@ ADMINS = ('admin')
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite')
-}
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -92,12 +90,10 @@ WSGI_APPLICATION = 'kzk.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': dj_database_url.config(default='sqlite:///db.sqlite')
-}"""
+}
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 
 
