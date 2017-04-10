@@ -91,10 +91,19 @@ WSGI_APPLICATION = 'kzk.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASE = {
-'default': dj_database_url.config(default='sqlite:///db.sqlite')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
 }
 
+
+"""
+DATABASES = {
+'default': dj_database_url.config(default='sqlite:///db.sqlite')
+}
+"""
 
 
 
