@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import dj_database_url
 
-boolean = lambda value: bool(int(value))
+"""boolean = lambda value: bool(int(value))
 local_path = lambda path: os.path.join(os.path.dirname(__file__), path)
 
 DEBUG = boolean(os.environ.get('DEBUG', 0))
@@ -23,7 +23,7 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = ('admin')
 
 MANAGERS = ADMINS
-
+"""
 
 
 
@@ -57,6 +57,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+#SMUGGLER
+
+SMUGGLER_FORMAT = 'xml'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -92,19 +96,18 @@ WSGI_APPLICATION = 'kzk.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'mydatabase',
     }
 }
-
-
 """
+
 DATABASES = {
 'default': dj_database_url.config(default='sqlite:///db.sqlite')
 }
-"""
 
 
 
