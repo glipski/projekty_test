@@ -1,9 +1,11 @@
 Django==1.11
+Pillow==4.1.0
 argparse==1.2.1
 dj-database-url==0.4.2
 django-registration==2.2
 django-smuggler==0.8.0
 gunicorn==19.7.1
+olefile==0.44
 psycopg2==2.7.1
 pytz==2017.2
 whitenoise==3.3.0

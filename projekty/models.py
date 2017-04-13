@@ -4,7 +4,9 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.contrib.auth.models import User
+from django.core.files.storage import FileSystemStorage
 
+fs = FileSystemStorage(location='/media/photos')
 
 
 # Create your models here.
@@ -21,6 +23,9 @@ class Nazwa(models.Model):
     szkola = models.CharField(max_length=200)
     liczba_uczniow = models.IntegerField(default=0)
     informacje = models.CharField(max_length=200)
+    zdjecie =  models.ImageField(storage=fs, 
+    #default='fs/None/no-img.jpg'
+    )
     
     def __str__(self):
         return self.nazwa_projektu
