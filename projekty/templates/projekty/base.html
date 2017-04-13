@@ -36,7 +36,7 @@
         {% else %}
         <li><a href="{% url 'projekty:dodaj' %}">Dodaj projekt</a></li>
         <li><a href="{% url 'projekty:lista' %}">Lista projektów</a></li>
-        <li><a href="{% url 'auth_logout' %}">Wyloguj: {{ user.username }}</a></li>
+        <li><a href="{% url 'auth_logout' %}">Wyloguj</a></li>
         {% endif %}
       </ul>
     </div><!--/.nav-collapse -->
