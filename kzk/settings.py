@@ -39,7 +39,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'jv4vvk_+4s5_jw_k12gmx7hkrx%vyilnh=%j_yxgrvuaqu)9n^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['projekty-kzk.herokuapp.com', '127.0.0.1', 'infinite-fortress-15262.herokuapp.com']
 

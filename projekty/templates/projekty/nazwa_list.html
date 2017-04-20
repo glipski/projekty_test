@@ -2,7 +2,9 @@
 
 <table class="table">
 <tr><th>Lp.</th><th>Nazwa</th><th>Szkoła</th><th>Operacje</th></tr>
+
 {% for p in object_list %}
+
 <tr>
   <td>{{ forloop.counter }}</td>
   <td>{{ p.nazwa_projektu }}</td>
