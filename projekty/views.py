@@ -15,7 +15,13 @@ from django.template.response import TemplateResponse
 def index(request):
     kontekst = {'komunikat': "Witamy w aplikacji Projekty KzK! Tu możesz założyć konto, zalogować się i zgłosić swój projekt. Zapraszamy!"}
     return TemplateResponse(request, 'projekty/index.html', kontekst)
-    
+
+def custom_404(request):
+    return render(request, '404.html', {}, status=404)
+
+def custom_500(request):
+    return render(request, '500.html', {}, status=500)
+
 @method_decorator(login_required, 'dispatch')
 class NazwaCreate(CreateView):
     """Widok dodawania projektów"""
@@ -37,6 +43,8 @@ class NazwaUpdate(UpdateView):
 class NazwaDelete(DeleteView):
     model = models.Nazwa
     success_url = reverse_lazy('projekty:lista')
+    
+
     
     
 #DetailView na później ++++

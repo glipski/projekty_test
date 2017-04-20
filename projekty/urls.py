@@ -24,6 +24,8 @@ urlpatterns = [url(r'^$', views.index, name='index'),
               
 ]
 
+handler404 = 'projekty.views.custom_404'
 
+handler500 = 'projekty.views.custom_500'
 
 
