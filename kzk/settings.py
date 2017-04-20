@@ -20,11 +20,11 @@ local_path = lambda path: os.path.join(os.path.dirname(__file__), path)
 DEBUG = boolean(os.environ.get('DEBUG', 0))
 TEMPLATE_DEBUG = DEBUG
 
-ADMINS = ('admin')
+
 
 MANAGERS = ADMINS
 """
-
+ADMINS = ('admin', 'grzegorzjakublipski@gmail.com')
 
 
 
@@ -41,7 +41,9 @@ SECRET_KEY = 'jv4vvk_+4s5_jw_k12gmx7hkrx%vyilnh=%j_yxgrvuaqu)9n^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['projekty-kzk.herokuapp.com', '127.0.0.1', 'infinite-fortress-15262.herokuapp.com']
+#ALLOWED_HOSTS = ['projekty-kzk.herokuapp.com', '127.0.0.1', 'infinite-fortress-15262.herokuapp.com', 'localhost']
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
