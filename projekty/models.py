@@ -23,9 +23,7 @@ class Nazwa(models.Model):
     szkola = models.CharField(max_length=200)
     liczba_uczniow = models.IntegerField(default=0)
     informacje = models.CharField(max_length=200)
-    zdjecie =  models.ImageField(storage=fs, 
-    #default='fs/None/no-img.jpg'
-    )
+    zdjecie =  models.FileField(upload_to=fs)
     
     def __str__(self):
         return self.nazwa_projektu

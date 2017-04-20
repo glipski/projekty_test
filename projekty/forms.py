@@ -3,12 +3,14 @@
 from django.forms import ModelForm, Textarea
 from . import models
 from django.forms.models import inlineformset_factory
+from django import forms
 
 class NazwaForm(ModelForm):
     
     class Meta:
         model = models.Nazwa
         exclude = ('data_publikacji', '#')
+        zdjecie = forms.FileField(label='Select a file')
         widgets = {'nazwa_projektu': Textarea(attrs={'rows':1, 'cols': 75}),
                    'krotki_opis': Textarea(attrs={'rows':1, 'cols': 75}),
                    'dlugi_opis': Textarea(attrs={'rows':1, 'cols': 75}),
@@ -17,13 +19,9 @@ class NazwaForm(ModelForm):
                    'szkola': Textarea(attrs={'rows':1, 'cols':50}),
                    'liczba_uczniow': Textarea(attrs={'rows':1, 'cols': 75}),
 				   'informacje': Textarea(attrs={'rows':2, 'cols':50}),
-				   
-				   
-				  
-				
-        
-        
-        }
+    
+                    }
+            
         
 """
 DaneFormSet = inlineformset_factory(
