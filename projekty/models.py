@@ -23,13 +23,17 @@ class Nazwa(models.Model):
     szkola = models.CharField(max_length=200)
     liczba_uczniow = models.IntegerField(default=0)
     informacje = models.CharField(max_length=200)
-    zdjecie =  models.FileField(upload_to=fs)
+
     
     def __str__(self):
         return self.nazwa_projektu
         
     class Meta:
         verbose_name_plural = 'nazwy'
+    
+class Photo(models.Model):
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d')   
+
     
 """
 @python_2_unicode_compatible

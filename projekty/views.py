@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, render_to_response
+from django.template import RequestContext
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from . import models
@@ -9,8 +10,10 @@ from . import forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse_lazy
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.template.response import TemplateResponse
+
 
 def index(request):
     kontekst = {'komunikat': "Witamy w aplikacji Projekty KzK! Tu możesz założyć konto, zalogować się i zgłosić swój projekt. Zapraszamy!"}
@@ -29,6 +32,25 @@ class NazwaCreate(CreateView):
     model = models.Nazwa
     form_class = forms.NazwaForm
     success_url = reverse_lazy('projekty:lista')
+    
+    def nazwa(request):
+        if request.method == 'POST':
+            form = PhotoForm(request.POST, request.FILES)
+            if form.is_valid():
+                newdoc = Photo(docfile=reques.FILES['docfile'])
+                newdoc.save()
+                
+                return HttpResponseRedirect(reverse('list'))
+        else:
+            form = PhotoForm()
+            
+        documents = Photo.objects.all()
+        
+        return render(
+            request,
+            'nazwa.html',
+            {'documents': documents, 'form': form}
+        )
 
 
 @method_decorator(login_required, 'dispatch')

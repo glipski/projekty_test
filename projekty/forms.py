@@ -21,7 +21,12 @@ class NazwaForm(ModelForm):
 				   'informacje': Textarea(attrs={'rows':2, 'cols':50}),
     
                     }
-            
+
+class PhotoForm(forms.Form):
+    docfile = forms.FileField(
+        label = 'Wybierz plik',
+        help_text='tekst pomocniczy',
+        )            
         
 """
 DaneFormSet = inlineformset_factory(
