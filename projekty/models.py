@@ -31,8 +31,8 @@ class Nazwa(models.Model):
     class Meta:
         verbose_name_plural = 'nazwy'
     
-class Photo(models.Model):
-    docfile = models.FileField(upload_to='documents/%Y/%m/%d')   
+#class Photo(models.Model):
+#    docfile = models.FileField(upload_to='documents/%Y/%m/%d')   
 
     
 """
